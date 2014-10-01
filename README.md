@@ -14,15 +14,20 @@ Please follow the steps below to integrate it with your Zabbix:
 1. Import templates into Zabbix
 2. Copy scripts into monitored servers (usually at /etc/zabbix/users-scripts)
 3. Update zabbix-agent config. Add User Parameters.
---- __Zookeeper__ 
+
+__Zookeeper__
+
 ```UserParameter=zookeeper[*],/etc/zabbix/user_scripts/check_zookeeper.py -s localhost:2181 -o zabbix -k "$1"
 ```
 
---- __Nginx__
+__Nginx__
+
 ```UserParameter=nginx[*],/etc/zabbix/user_scripts/check_nginx.sh "$1" "$2"
 ```
 
---- __MongoDB__
+__MongoDB__
+
 ```UserParameter=mongo[*],/etc/zabbix/user_scripts/check_mongo.py -n locahost -p "$1"
 ```
+
 4. Restart zabbix agent.
