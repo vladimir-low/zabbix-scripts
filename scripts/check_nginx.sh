@@ -5,6 +5,16 @@
 # nginx:
 #  - anything available via nginx stub-status module
 #
+# Example of statistic configuration:
+# server {
+#   listen 10061;
+#   location /nginx_status {
+#     stub_status on;
+#     access_log off;
+#     allow 127.0.0.1;
+#     deny all;
+#   }
+# }
 ##################################
 # Contact:
 #  vincent.viallet@gmail.com
